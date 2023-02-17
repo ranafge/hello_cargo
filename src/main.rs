@@ -122,6 +122,7 @@ fn replace() {
 // struct way to create complex data type
 
 
+struct Colour(u32, u32, u32);
 fn create_complex_data_type() {
     struct Color {
         red : u8,
@@ -134,5 +135,18 @@ fn create_complex_data_type() {
     bg.blue = 150;
     bg.green = 150;
     println!("Color is {} {} {}", bg.red, bg.green, bg.blue );
+
+    struct Point {
+        x : u128,
+        y: u128
+    }
+
+    let coordinate = Point {x: 223, y: 33};
+    println!("coordinate is x:{}, y:{}", coordinate.x, coordinate.y);
+
+    let red = Colour(200, 100, 50);
+    println!("Color is {} , {}, {}", red.0, red.1, red.2);
+
+
 }
 
