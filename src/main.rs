@@ -98,7 +98,41 @@ if food == "cookies" {
     println!("I likde fruit also");
 } else {
     println!("I do not like cookies");
+
 }
+
+    replace();
+
+    // struct is way to create a complex data type.
+    create_complex_data_type();
 
 
 }
+
+// string method
+
+fn replace() {
+    let hello = String::from("Hello world");
+
+    println!("Hello string is : {hello}");
+
+
+}
+
+// struct way to create complex data type
+
+
+fn create_complex_data_type() {
+    struct Color {
+        red : u8,
+        green: u8,
+        blue : u8
+    }
+
+    let mut bg = Color {red:255, green: 35, blue:160};
+    bg.red = 150;
+    bg.blue = 150;
+    bg.green = 150;
+    println!("Color is {} {} {}", bg.red, bg.green, bg.blue );
+}
+
