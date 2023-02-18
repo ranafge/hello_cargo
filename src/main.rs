@@ -43,70 +43,65 @@ fn main() {
         println!("Array element is {}", ele);
     }
 
+    // user input
 
-// user input
+    let mut input = String::new();
+    println!("Enter a string ");
+    io::stdin()
+        .read_line(&mut input)
+        .expect("fail to read line");
+    println!("User input is {}", input);
 
-let mut input = String::new();
-println!("Enter a string ");
-io::stdin().read_line(&mut input).expect("fail to read line");
-println!("User input is {}" , input);
+    // arithmetic and type casting
 
-// arithmetic and type casting
+    let x: f32 = 10.0; // 0-255
+    let y: f64 = 10.0; // -128-127
 
-let x:f32 = 10.0; // 0-255 
-let y:f64 = 10.0; // -128-127 
+    let z = x as f64 + y;
+    print!("total of x and y is :{}", z);
 
-let z = x as f64 + y;
-print!("total of x and y is :{}", z);
+    // mod
+    let a = 100;
+    let b = 10;
+    print!("Modulas {}", a % b);
 
-// mod
-let a = 100;
-let b = 10;
-print!("Modulas {}", a % b);
+    // overflow
+    let over_flow: u8 = 255; // 0-255
+                             // print!("OVERFLOW ERROR MESSAGE {}", over_flow +1);
+    print!("OVERFLOW ERROR MESSAGE {}", over_flow);
 
-// overflow
-let over_flow: u8 = 255; // 0-255
-// print!("OVERFLOW ERROR MESSAGE {}", over_flow +1); 
-print!("OVERFLOW ERROR MESSAGE {}", over_flow); 
+    // type casting
 
+    let mut input2 = String::new();
+    println!("Enter number : ");
+    io::stdin().read_line(&mut input2).expect("FAIL TO READ");
+    let int_input: i64 = input2.trim().parse().unwrap();
+    print!("{}", int_input + 2);
 
-// type casting
+    // condition if /else
 
-let mut input2 = String::new();
-println!("Enter number : " );
-io::stdin().read_line(&mut input2).expect("FAIL TO READ");
-let int_input: i64 = input2.trim().parse().unwrap();
-print!("{}", int_input + 2);
+    let cond = (2 as f32) < 2.2;
 
-// condition if /else
+    let cond2 = true && cond;
+    let cond3 = true || cond;
 
-let cond = (2 as f32) < 2.2;
+    println!(" Conditional result: {}", cond2);
+    println!("Conditional result for OR {}", cond3);
 
-let cond2 = true && cond;
-let cond3  = true || cond;
+    let food = "cookies";
 
-println!(" Conditional result: {}", cond2);
-println!("Conditional result for OR {}", cond3);
-
-
-
-let food = "cookies";
-
-if food == "cookies" {
-    println!("I like to cookies");
-} else if food == "fruit" {
-    println!("I likde fruit also");
-} else {
-    println!("I do not like cookies");
-
-}
+    if food == "cookies" {
+        println!("I like to cookies");
+    } else if food == "fruit" {
+        println!("I likde fruit also");
+    } else {
+        println!("I do not like cookies");
+    }
 
     replace();
 
     // struct is way to create a complex data type.
     create_complex_data_type();
-
-
 }
 
 // string method
@@ -115,38 +110,49 @@ fn replace() {
     let hello = String::from("Hello world");
 
     println!("Hello string is : {hello}");
-
-
 }
 
 // struct way to create complex data type
 
-
-struct Colour(u32, u32, u32);
 fn create_complex_data_type() {
     struct Color {
-        red : u8,
+        red: u8,
         green: u8,
-        blue : u8
+        blue: u8,
     }
 
-    let mut bg = Color {red:255, green: 35, blue:160};
+    let mut bg = Color {
+        red: 255,
+        green: 35,
+        blue: 160,
+    };
     bg.red = 150;
     bg.blue = 150;
     bg.green = 150;
-    println!("Color is {} {} {}", bg.red, bg.green, bg.blue );
+    println!("Color is {} {} {}", bg.red, bg.green, bg.blue);
 
     struct Point {
-        x : u128,
-        y: u128
+        x: u128,
+        y: u128,
     }
 
-    let coordinate = Point {x: 223, y: 33};
+    let coordinate = Point { x: 223, y: 33 };
     println!("coordinate is x:{}, y:{}", coordinate.x, coordinate.y);
+    struct Colour {
+        x: u32,
+        y: u32,
+        z: u32,
+    }
+    let color = Colour { x: 3, y: 3, z: 3 };
+    println!("color {} - {} -{}", color.x, color.y, color.z);
 
-    let red = Colour(200, 100, 50);
-    println!("Color is {} , {}, {}", red.0, red.1, red.2);
 
 
+    struct Rectangle {
+        width: u32,
+        heaight : u32
+    }
+
+    let my_rec = Rectangle {width: 2232, heaight: 332};
+    println!("My rectangle area is  {}", my_rec.width * my_rec.heaight);
 }
-
