@@ -155,4 +155,35 @@ fn create_complex_data_type() {
 
     let my_rec = Rectangle {width: 2232, heaight: 332};
     println!("My rectangle area is  {}", my_rec.width * my_rec.heaight);
+
+
+    //Ownership rules
+    //i) Each value in Rust has owner
+    //ii) there can only be one owner at a time
+    //iii) the owner goes out of scope, the value will be droped.
+
+    let mut s  = String::from("hello");
+    println!("s is {}", s);
+
+    s.push_str(", world");
+    s.push_str(", world!@");
+    s.push_str(",End.");
+    s.push_str("alveen");
+    println!("{s}");
+
+    let mut s2 = s.clone();
+    s2.push_str(", rana");
+    println!("{s2}");
+
+    // length of string
+    let s1 = String::from("hello");
+    let (s2 , len) = calculate_length(s1);
+    println!("The length of '{}' is {} ", s2, len);
+    
+
+    fn calculate_length(s: String) -> (String, usize) {
+        let length: usize = s.len();
+        (s, length)
+    }
+
 }
