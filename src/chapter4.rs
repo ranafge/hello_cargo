@@ -16,7 +16,8 @@ pub fn chapter4() {
    borrow3(&mut s3);
    take_ownership3(s3);
 //    println!("Compile error {}", s3) // compile error
-   
+    let x  = String::from("string from ref type.");
+   borrow_accept_reference_type(&x);
    
 }
 
@@ -42,4 +43,8 @@ fn borrow3(s: &mut String){
 }
 fn take_ownership3(s:String) {
     println!("Ownership function3 {}", s)
+}
+
+fn borrow_accept_reference_type(s: &String) {
+    println!("accept reference type string only {}", s)
 }
