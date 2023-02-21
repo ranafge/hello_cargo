@@ -11,7 +11,7 @@ pub fn chapter4() {
 }
 
 fn borrow(s: &mut String) { // accept a 'reference type'
-    s.push_str("xxxxxxxxxx")
+    s.push_str(" , xxxxxxxxxx")
 }
 
 fn take_ownership(s : String) {
