@@ -1,5 +1,6 @@
 use std::io;
 mod chapter4;
+mod chapter4_reference_borrowing;
 // main function
 fn main() {
     // print a string
@@ -103,7 +104,11 @@ fn main() {
 
     // struct is way to create a complex data type.
     create_complex_data_type();
-}
+    //chapter4.2
+    chapter4_reference_borrowing::reference_borrowing();
+
+    // end chapter4.2
+} // main function ended.
 
 // string method
 
@@ -174,6 +179,4 @@ fn create_complex_data_type() {
     }
 
     chapter4::chapter4();
-
-    
 }
