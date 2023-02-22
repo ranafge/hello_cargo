@@ -19,7 +19,42 @@ pub fn reference_borrowing() {
     let take_str_one = String::from("WASIR");
     let take_str_two = String::from("ISLAM");
     reference_example(&take_str_one, &take_str_two);
-}
+
+    // Dereferencing a pointer access its data
+    // dereference operator [*]
+
+    let mut x = Box::new(1);
+    let a = *x; // 1
+    *x += 1; // x = 2
+
+    let r1 = &x; // point to the x reference
+    let b = **r1; // pint to the heap value directly
+
+    let r2 = &*x; // point to the heap vlaue
+
+    let c = *r2; // c = 2
+
+    let  my_string = String::from("Sharmin");
+    let string_length = my_string.len(); // implicit reference
+    let my_string_length = str::len(&my_string);
+    println!("My string length is {}", string_length);
+    println!("My string length_two is {}", my_string_length);
+
+    // reference is read-only
+    // immutable references is call shared references
+    let mut e = String::from("hello");
+    let e2: &mut String = &mut e;
+    println!("e2 e2 {}", e2);
+    e2.push_str(" world Rana");
+    println!("e2 push string - {}", e2);
+
+    let mut z = 1;
+    let w = &z;
+    println!("www is {}", w);
+    
+    
+
+} // end reference_borrowing function
 
 // greet function
 
