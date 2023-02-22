@@ -12,10 +12,13 @@ pub fn reference_borrowing() {
     let string1 = String::from("Hello");
     let string2 = String::from("World");
     let (g1_again, g2_again) = return_ownership(string1, string2);
-    let s  = format!("{}-{}", g1_again, g2_again);
-    println!("sssss-{s}")
+    let s = format!("{}-{}", g1_again, g2_again);
+    println!("sssss-{s}");
+    // reference is a kind of pointer.
 
-
+    let take_str_one = String::from("WASIR");
+    let take_str_two = String::from("ISLAM");
+    reference_example(&take_str_one, &take_str_two);
 }
 
 // greet function
@@ -27,4 +30,11 @@ fn greet(g1: String, g2: String) {
 fn return_ownership(g1: String, g2: String) -> (String, String) {
     println!("String1-{} and String2-{}", g1, g2);
     (g1, g2)
+}
+
+fn reference_example(take_string_one: &String, take_string_two: &String) {
+    println!(
+        "Take string one {} Take string two {}",
+        take_string_one, take_string_two
+    )
 }
