@@ -1,8 +1,13 @@
 use std::io;
 mod chapter4;
 mod chapter4_reference_borrowing;
+mod chapter4_slice;
+mod chapter5_method_syntax;
 // main function
 fn main() {
+
+    chapter5_method_syntax::method_syntex();
+
     // print a string
     println!("Hello, world!");
     // sign integer
@@ -106,6 +111,10 @@ fn main() {
     create_complex_data_type();
     //chapter4.2
     chapter4_reference_borrowing::reference_borrowing();
+
+    // chapter4.4 slice
+
+    chapter4_slice::slice();
 
     // end chapter4.2
 } // main function ended.
